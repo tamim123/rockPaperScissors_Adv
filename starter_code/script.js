@@ -3,11 +3,37 @@ var aiPoint = 0;
 
 // This function returns the selection of the computer
 function getAISelection() {
+    var num=Math.floor(Math.random ()*3)
+    num =1,2,0
+    if(num==="1"){
+        return "paper"
+    }
+    else if(num==="2"){
+        return "rock"
+    }
+    else if(num=="0"){
+        return "siccors"
+    }
     //TODO: randomly choose between 'rock', 'paper', or 'scissors'
 }
 
 // This function picks the winner
 function pickWinner(userValue, aiValue) {
+
+    
+if(userValue===aiValue){
+    return "drow"
+    }
+    else if(userValue=="paper"&aiValue=="rock"){
+    return "user"
+    }
+    else if(userValue=="scissor"&aiValue=="rock"){
+        return "ai"
+    }
+    else if(userValue=="rock"&aiValue=="scissor"){
+        return "user"
+    }
+
     //TODO: pick the correct winner: user or ai
     //TODO: Add one point for the winner
 }
@@ -35,5 +61,6 @@ function evaluate(evt) {
 
 // This function runs on page load
 $(document).ready(function(){
-
+$(".token").click(evaluate);
+ 
 });
